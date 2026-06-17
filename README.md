@@ -1,249 +1,108 @@
-Flipkart Price Tracker
+⏰ Automated Price Monitoring
 
+Monitor any Flipkart product 24/7 with automatic price tracking and instant alerts.
 
-📈 Track Flipkart product prices, analyze historical price trends, receive instant price drop alerts, and integrate with a powerful Flipkart Price Tracker API.
+Features
 
-An open-source Flipkart Price Tracking platform that helps users monitor product prices, view historical price changes, receive price drop alerts, and access pricing data through a developer-friendly API.
+* Track any Flipkart product using its URL
+* Automatic price checks every hour
+* Detect price drops in real-time
+* Desktop notifications
+* Email alerts
+* Historical price tracking
+* Headless browser support
+* Cross-platform support (Windows, Linux, macOS)
 
-⸻
+Quick Start
 
-🚀 Features
+Install dependencies:
 
-Price Tracking
+pip install selenium webdriver-manager beautifulsoup4 plyer
 
-* Track prices of any Flipkart product
-* Automatic price monitoring
-* Detect price increases and decreases
-* Historical price storage
+Run the tracker:
 
-Price History
+python flipkart_price_tracker.py
 
-* View complete product price history
-* Analyze long-term price trends
-* Track lowest and highest recorded prices
-* Historical price charts and analytics
+Enter a Flipkart product URL when prompted:
 
-Price Alerts
+https://www.flipkart.com/product-name/p/itmxxxxxxxx
 
-* Create custom target price alerts
-* Instant notifications when prices drop
-* Email notifications
-* Webhook integrations
-* Telegram and WhatsApp integration support
+The tracker will:
 
-Developer API
+1. Fetch the current product price
+2. Store the initial price
+3. Check the product every hour
+4. Compare against the previous price
+5. Send alerts when the price drops
 
-* Fetch current product prices
-* Access historical price data
-* Retrieve product metadata
-* Monitor price changes programmatically
-* Build custom price comparison applications
+Alert Types
 
-Analytics
+Desktop Notifications
 
-* Lowest price ever recorded
-* Highest price ever recorded
-* Average selling price
-* Price volatility analysis
-* Discount trend analysis
+Receive instant desktop notifications whenever a product price decreases.
 
-⸻
+Example:
 
-🎯 Use Cases
+Flipkart Price Drop!
+Old Price: ₹79,999
+New Price: ₹74,999
+You Save: ₹5,000
 
-For Shoppers
+Email Notifications
 
-* Buy products at the lowest price
-* Receive alerts when products go on sale
+Configure SMTP settings to receive email alerts whenever a tracked product reaches a lower price.
+
+Example Workflow
+
+Current Price: ₹79,999
+       │
+       ▼
+Wait 1 Hour
+       │
+       ▼
+New Price: ₹74,999
+       │
+       ▼
+Price Drop Detected
+       │
+       ├── Desktop Notification
+       └── Email Alert
+
+Supported Product Categories
+
+* Smartphones
+* Laptops
+* Tablets
+* Smart Watches
+* Headphones
+* Televisions
+* Home Appliances
+* Gaming Consoles
+* Cameras
+* Books
+* Fashion Products
+* Any Flipkart product page
+
+Use Cases
+
+* Track upcoming Flipkart sales
+* Monitor Big Billion Days discounts
+* Wait for the lowest historical price
 * Avoid fake discounts
-* Track upcoming sale events
+* Buy products at the best possible price
+* Build your own price comparison platform
 
-For Developers
+Why This Tracker?
 
-* Build price comparison websites
-* Create shopping assistants
-* Analyze e-commerce pricing trends
-* Develop deal discovery platforms
+Unlike many browser extensions and online trackers, this solution is:
 
-For Businesses
+* Open Source
+* Self-hosted
+* Privacy-friendly
+* Customizable
+* Developer-friendly
+* Free to use
 
-* Competitor price monitoring
-* Market research
-* Pricing intelligence
-* Product trend analysis
+Keywords
 
-⸻
-
-📊 Example Data
-
-{
-  "productId": "FLIPKART123",
-  "title": "Apple iPhone 16",
-  "currentPrice": 74999,
-  "lowestPrice": 69999,
-  "highestPrice": 82999,
-  "averagePrice": 76350,
-  "lastUpdated": "2026-06-17T10:00:00Z"
-}
-
-⸻
-
-🔗 API Example
-
-Get Product Information
-
-GET /api/products/{productId}
-
-Response:
-
-{
-  "productId": "FLIPKART123",
-  "name": "Apple iPhone 16",
-  "currentPrice": 74999,
-  "currency": "INR",
-  "availability": true
-}
-
-⸻
-
-Get Price History
-
-GET /api/products/{productId}/history
-
-Response:
-
-{
-  "productId": "FLIPKART123",
-  "history": [
-    {
-      "date": "2026-06-10",
-      "price": 79999
-    },
-    {
-      "date": "2026-06-15",
-      "price": 74999
-    }
-  ]
-}
-
-⸻
-
-Create Price Alert
-
-POST /api/alerts
-
-Request:
-
-{
-  "productId": "FLIPKART123",
-  "targetPrice": 69999,
-  "notificationType": "email"
-}
-
-⸻
-
-🏗️ Architecture
-
-Flipkart Product URL
-        │
-        ▼
- Product Scraper
-        │
-        ▼
- Price Processor
-        │
-        ▼
- Database
-        │
-        ├── Price History
-        ├── Product Metadata
-        └── Alert Rules
-        │
-        ▼
- REST API
-        │
-        ▼
- Web Dashboard / Mobile App
-
-⸻
-
-🔥 Why Use This Project?
-
-Save Money
-
-Track prices and purchase products when they reach the best value.
-
-Historical Insights
-
-See real pricing trends instead of relying on advertised discounts.
-
-Automation
-
-Get notified automatically when your desired price is reached.
-
-Developer Friendly
-
-Easy-to-use API for integrations and custom applications.
-
-Open Source
-
-Self-hosted and fully customizable.
-
-⸻
-
-📈 SEO Keywords
-
-This project is designed around the following search terms:
-
-* Flipkart Price Tracker
-* Flipkart Price History
-* Flipkart Price Alert
-* Flipkart Price Drop Alert
-* Flipkart Product Price Tracker
-* Flipkart Price Monitoring
-* Flipkart Price API
-* Flipkart Product API
-* Flipkart Deal Tracker
-* Flipkart Price Comparison
-* Price History Tracker India
-* E-commerce Price Tracking
-* Online Shopping Price Tracker
-* Product Price History API
-
-⸻
-
-🛠️ Installation
-
-git clone https://github.com/yourusername/flipkart-price-tracker.git
-cd flipkart-price-tracker
-npm install
-npm run dev
-
-⸻
-
-🤝 Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a Pull Request
-
-⸻
-
-⭐ Support
-
-If this project helps you save money or build amazing applications, please consider giving it a star on GitHub.
-
-⸻
-
-📜 Disclaimer
-
-This project is intended for educational and research purposes. Users are responsible for complying with Flipkart’s terms of service and applicable laws. The project is not affiliated with, endorsed by, or sponsored by Flipkart.
-
-⸻
-
-🌟 Tags
-
-flipkart-price-tracker flipkart-price-history flipkart-price-alert flipkart-api price-tracker-api product-price-history price-monitoring ecommerce-analytics deal-tracker shopping-assistant price-drop-alert open-source india price-comparison product-tracking
+Flipkart Price Tracker, Flipkart Price Alert, Flipkart Price History, Flipkart Price Drop Alert, Flipkart Product Tracker, Flipkart Deal Tracker, Flipkart Price Monitoring, Product Price Tracker, Price History Tracker, Price Alert API, Flipkart Price Tracking Software.
